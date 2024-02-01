@@ -31004,7 +31004,10 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                     break;
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_BRACKET_QUOTED_NAME: 
                     this.WhiteSpace_SeparateWords(state);
-                    state.AddOutputContent(System.String.concat("[", System.String.replaceAll(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue, "]", "]]"), "]"));
+                    if (!this.Options.addBracketsAroundNames)
+                        state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.replace("[", "").replace("]", ""));
+                    else    
+                        state.AddOutputContent(System.String.concat("[", System.String.replaceAll(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue, "]", "]]"), "]"));
                     state.WordSeparatorExpected = true;
                     break;
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_QUOTED_STRING: 
@@ -31088,7 +31091,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                     if (this.Options.AddBracketsAroundNames && !contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.startsWith("@"))
                         state.AddOutputContent("[" + contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue + "]");
                     else
-                        state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.Replace("[", "").Replace("]", ""));
+                        state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue);
                     state.WordSeparatorExpected = true;
                     break;
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_NUMBER_VALUE: 
