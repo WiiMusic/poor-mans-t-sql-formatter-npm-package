@@ -34127,6 +34127,7 @@ const optionReference = {
   uppercaseKeywords:         {type: 'bool',   default: true,           appliesToFormattingType: ['standard'],            description: "Should T-SQL keywords (like SELECT, FROM) be automatically uppercased?" },
   coloring:                  {type: 'bool',   default: true,           appliesToFormattingType: ['standard'],            description: "(In HTML output, if enabled) should keywords, comments etc have distinct color classes?" },
   keywordStandardization:    {type: 'bool',   default: false,          appliesToFormattingType: ['standard'],            description: "Should less-common T-SQL keywords be replaced with their standard counterparts? (NOTE: only safe for T-SQL!)" },
+  addBracketsAroundNames:    {type: 'bool',   default: true,           appliesToFormattingType: ['standard'],            description: "Should lists (columns, group by args, etc) be surrounded by brackets?" },
   randomizeKeywordCase:      {type: 'bool',   default: false,          appliesToFormattingType: ['obfuscation'],         description: "Should the case of keywords be randomized, to minimize legibility?" },
   randomizeColor:            {type: 'bool',   default: false,          appliesToFormattingType: ['obfuscation'],         description: "(In HTML output, if enabled) should the color of the SQL text be randomly varied?" },
   randomizeLineLengths:      {type: 'bool',   default: false,          appliesToFormattingType: ['obfuscation'],         description: "Should the SQL be wrapped at arbitrary intervals, to minimize legibility?" },
