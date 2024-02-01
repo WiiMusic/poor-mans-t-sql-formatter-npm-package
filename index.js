@@ -31088,7 +31088,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                     if (this.Options.AddBracketsAroundNames && !contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.startsWith("@"))
                         state.AddOutputContent("[" + contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue + "]");
                     else
-                        state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue);
+                        state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.Replace("[", "").Replace("]", ""));
                     state.WordSeparatorExpected = true;
                     break;
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_NUMBER_VALUE: 
