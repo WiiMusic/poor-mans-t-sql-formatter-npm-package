@@ -31079,7 +31079,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                     if (!contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.startsWith("@"))
                         state.AddOutputContent("[" + contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue + "]");
                     else
-                    state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue);
+                        state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue);
                     state.WordSeparatorExpected = true;
                     break;
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_NUMBER_VALUE: 
@@ -31297,7 +31297,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                 this.CurrentLineLength = (this.CurrentLineLength + content.length) | 0;
             },
             AddOutputLineBreak: function () {
-
+                
                 //if linebreaks are added directly in the content (eg in comments or strings), they 
                 // won't be accounted for here - that's ok.
                 if (this.SpecialRegionActive == null) {
@@ -32434,7 +32434,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                                 var whileContainerOpen = sqlTree.SaveNewElement$1(PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_CONTAINER_OPEN, "", newWhileLoop);
                                 sqlTree.SaveNewElement$1(PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_OTHERKEYWORD, token.PoorMansTSqlFormatterLib$Interfaces$IToken$Value, whileContainerOpen);
                                 sqlTree.CurrentContainer = sqlTree.SaveNewElement$1(PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_BOOLEAN_EXPRESSION, "", newWhileLoop);
-                            } else if (System.String.startsWith(significantTokensString, "IF ")) {
+                            } else if (System.String.startsWith(significantTokensString, "IF ") && !System.String.startsWith(significantTokensString, "IF EXISTS ")) {
                                 sqlTree.ConsiderStartingNewStatement();
                                 sqlTree.StartNewContainer(PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_IF_STATEMENT, token.PoorMansTSqlFormatterLib$Interfaces$IToken$Value, PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_BOOLEAN_EXPRESSION);
                             } else if (System.String.startsWith(significantTokensString, "ELSE ")) {
@@ -32681,7 +32681,8 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
 
                                 //check for statements starting...
                                 if (PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.IsStatementStarter(token) || sqlTree.NewStatementDue) {
-                                    sqlTree.ConsiderStartingNewStatement();
+                                    if (!System.String.startsWith(significantTokensString, "IF EXISTS"))
+                                        sqlTree.ConsiderStartingNewStatement();
                                 }
 
                                 //check for statements starting...
