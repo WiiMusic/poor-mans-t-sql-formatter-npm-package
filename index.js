@@ -31733,6 +31733,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("IMAGE", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.DataTypeKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("IMPLICIT_TRANSACTIONS", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OtherKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("IN", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OperatorKeyword);
+                    PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("INCLUDE", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OtherKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("INDEX", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OtherKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("INDEXDEFRAG", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OtherKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("INDEXKEY_PROPERTY", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.FunctionKeyword);
