@@ -31004,7 +31004,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                     break;
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_BRACKET_QUOTED_NAME: 
                     this.WhiteSpace_SeparateWords(state);
-                    if (!this.Options.addBracketsAroundNames)
+                    if (!this.Options.AddBracketsAroundNames)
                         state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.replace("[", "").replace("]", ""));
                     else    
                         state.AddOutputContent(System.String.concat("[", System.String.replaceAll(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue, "]", "]]"), "]"));
