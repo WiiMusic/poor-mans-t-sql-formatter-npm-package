@@ -34201,7 +34201,7 @@ function createFormatterForOptionSet(optionSet) {
       stdOptions.UppercaseKeywords        = optionSet.uppercaseKeywords;
       stdOptions.HTMLColoring             = optionSet.coloring;
       stdOptions.KeywordStandardization   = optionSet.keywordStandardization;
-      stdOptions.AddBracketsAroundNames   = optionSet.AddBracketsAroundNames;
+      stdOptions.AddBracketsAroundNames   = optionSet.addBracketsAroundNames;
       formatter = new PoorMansTSqlFormatterLib.Formatters.TSqlStandardFormatter.$ctor1(stdOptions);
       break;
     case 'identity':
