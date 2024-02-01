@@ -28640,7 +28640,8 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
             KeywordStandardization: false,
             ExpandInLists: false,
             NewClauseLineBreaks: 0,
-            NewStatementLineBreaks: 0
+            NewStatementLineBreaks: 0,
+            AddBracketsAroundNames: false
         },
         ctors: {
             ctor: function () {
@@ -28661,6 +28662,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                 this.ExpandInLists = true;
                 this.NewClauseLineBreaks = 1;
                 this.NewStatementLineBreaks = 2;
+                this.AddBracketsAroundNames = true;
             },
             $ctor1: function (serializedString) {
                 PoorMansTSqlFormatterLib.Formatters.TSqlStandardFormatterOptions.ctor.call(this);
@@ -28729,7 +28731,11 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                                                                                     if (Bridge.referenceEquals(key, "NewStatementLineBreaks")) {
                                                                                         this.NewStatementLineBreaks = System.Convert.toInt32(value);
                                                                                     } else {
-                                                                                        throw new System.ArgumentException(System.String.concat("Unknown option: ", key));
+                                                                                        if (Bridge.referenceEquals(key, "AddBracketsAroundNames")) {
+                                                                                            this.AddBracketsAroundNames = System.Convert.toBoolean(value);
+                                                                                        } else {
+                                                                                            throw new System.ArgumentException(System.String.concat("Unknown option: ", key));
+                                                                                        }
                                                                                     }
                                                                                 }
                                                                             }
@@ -28805,6 +28811,9 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
             }
             if (this.NewStatementLineBreaks !== PoorMansTSqlFormatterLib.Formatters.TSqlStandardFormatterOptions._defaultOptions.NewStatementLineBreaks) {
                 overrides.add("NewStatementLineBreaks", this.NewStatementLineBreaks.toString());
+            }
+            if (this.AddBracketsAroundNames !== PoorMansTSqlFormatterLib.Formatters.TSqlStandardFormatterOptions._defaultOptions.AddBracketsAroundNames) {
+                overrides.add("AddBracketsAroundNames", System.Boolean.toString(this.AddBracketsAroundNames));
             }
             this.NewStatementLineBreaks = 2;
 
@@ -31076,7 +31085,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_MONETARY_VALUE: 
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_LABEL: 
                     this.WhiteSpace_SeparateWords(state);
-                    if (!contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.startsWith("@"))
+                    if (PoorMansTSqlFormatterLib.Formatters.TSqlStandardFormatterOptions.AddBracketsAroundNames && !contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.startsWith("@"))
                         state.AddOutputContent("[" + contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue + "]");
                     else
                         state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue);
