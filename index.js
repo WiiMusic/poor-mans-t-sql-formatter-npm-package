@@ -30850,7 +30850,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                             state.WhiteSpace_BreakToNextLine();
                         }
                         state.Assimilate(innerState);
-                        state.WhiteSpace_BreakToNextLine();
+                        state.WhiteSpace_BreakToNextLineWithUnIndent();
                     } else {
                         state.Assimilate(innerState);
                     }
@@ -31334,6 +31334,13 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
             WhiteSpace_BreakToNextLine: function () {
                 this.AddOutputLineBreak();
                 this.Indent(this.IndentLevel);
+                this.BreakExpected = false;
+                this.SourceBreakPending = false;
+                this.WordSeparatorExpected = false;
+            },
+            WhiteSpace_BreakToNextLineWithUnIndent: function () {
+                this.AddOutputLineBreak();
+                this.Indent(this.IndentLevel-1);
                 this.BreakExpected = false;
                 this.SourceBreakPending = false;
                 this.WordSeparatorExpected = false;
