@@ -31088,7 +31088,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_MONETARY_VALUE: 
                 case PoorMansTSqlFormatterLib.Interfaces.SqlStructureConstants.ENAME_LABEL: 
                     this.WhiteSpace_SeparateWords(state);
-                    if (this.Options.AddBracketsAroundNames && !contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.startsWith("@"))
+                    if (this.Options.AddBracketsAroundNames && !contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue.startsWith("@") && !state._outBuilder.buffer[0] == '*COLLATE')
                         state.AddOutputContent("[" + contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue + "]");
                     else
                         state.AddOutputContent(contentElement.PoorMansTSqlFormatterLib$ParseStructure$Node$TextValue);
