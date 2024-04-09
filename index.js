@@ -31583,6 +31583,8 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("CLOSE", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OtherKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("CLUSTERED", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OtherKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("COALESCE", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.FunctionKeyword);
+                    PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("COLLATE", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.FunctionKeyword);
+                    PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("COLLATION", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.FunctionKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("COLLATIONPROPERTY", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.FunctionKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("COLLECTION", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OtherKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("COLUMN", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OtherKeyword);
