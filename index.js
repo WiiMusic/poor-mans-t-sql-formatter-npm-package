@@ -31488,6 +31488,8 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                     // cursor options "READ_ONLY", "FAST_FORWARD", etc.
                     // also added numerous missing entries, such as "Xml", etc
                     // Could/Should check against MSDN Ref: http://msdn.microsoft.com/en-us/library/ms189822.aspx
+                    
+                    //#region Keyword exception list
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList = new (System.Collections.Generic.Dictionary$2(System.String,PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType))();
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("@@CONNECTIONS", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.FunctionKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("@@CPU_BUSY", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.FunctionKeyword);
@@ -32042,6 +32044,7 @@ Bridge.assembly("PoorMansTSqlFormatterJS", function ($asm, globals) {
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("XLOCK", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.OtherKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("XML", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.DataTypeKeyword);
                     PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordList.add("YEAR", PoorMansTSqlFormatterLib.Parsers.TSqlStandardParser.KeywordType.FunctionKeyword);
+                    //#endregion
                 }
             }
         },
