@@ -1,6 +1,6 @@
 {
   "name": "@kyl12/poor-mans-t-sql-formatter",
-  "version": "1.6.19",
+  "version": "1.6.20",
   "description": "A T-SQL formatting library in JS, transpiled from the C# library of the same name. This version includes some tweaks by me, but all credit goes to the original author, Tao Klerks",
   "main": "index.js",
   "scripts": {
@@ -30,5 +30,8 @@
     "chai": "4.1.2",
     "fs-extra": "4.0.2",
     "mocha": "4.0.1"
-    }
+  },
+  "directories": {
+    "test": "test"
+  }
 }
