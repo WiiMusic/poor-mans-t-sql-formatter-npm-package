@@ -1,5 +1,5 @@
 'use strict';
-
+//TODO Do not put bracket around COLLATION names
 //UMD intro
 (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
